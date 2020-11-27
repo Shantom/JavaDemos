@@ -1,16 +1,16 @@
 package com.shantom.service;
 
-import com.shantom.dao.AppleSeller;
-import com.shantom.dao.IFruitSeller;
+import com.shantom.dao.AppleProvider;
+import com.shantom.dao.IFruitProvider;
 
 public class FruitMarket implements IFruitMarket{
-    IFruitSeller fruitSeller = new AppleSeller();
+    IFruitProvider fruitProvider = new AppleProvider();
 
-    public void setFruitSeller(IFruitSeller fruitSeller) {
-        this.fruitSeller = fruitSeller;
+    public void setFruitProvider(IFruitProvider fruitProvider) {
+        this.fruitProvider = fruitProvider;
     }
 
     public String getOneFruit() {
-        return fruitSeller.buyOne();
+        return fruitProvider.getOne();
     }
 }
