@@ -3,8 +3,61 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <import resource="userbean.xml"/>
+
+    <bean id="address" class="com.shantom.pojo.Address">
+
+    </bean>
+
     <bean id="student" class="com.shantom.pojo.Student">
+        <!--普通值-->
         <property name="name" value="snw"/>
+        <!--Bean-->
+        <property name="address" ref="address"/>
+        <!--数组-->
+        <property name="books">
+            <array>
+                <value>"金瓶梅"</value>
+                <value>"郭德纲相声选"</value>
+            </array>
+        </property>
+
+        <!--List-->
+        <property name="hobbys">
+            <list>
+                <value>"game"</value>
+                <value>"code"</value>
+            </list>
+        </property>
+
+        <!--Map-->
+        <property name="card">
+            <map>
+                <entry key="a" value="123"/>
+                <entry key="b" value="456"/>
+            </map>
+        </property>
+
+        <!--Set-->
+        <property name="games">
+            <set>
+                <value>OW</value>
+                <value>CS</value>
+            </set>
+        </property>
+
+        <!--null-->
+        <property name="wife">
+            <null/>
+        </property>
+
+        <!--Properties-->
+        <property name="info">
+            <props>
+                <prop key="学号">251005821</prop>
+                <prop key="性别">男</prop>
+            </props>
+        </property>
 
     </bean>
 </beans>
