@@ -7,6 +7,7 @@
     <bean id="beforeLog" class="com.shantom.log.BeforeLog"/>
     <bean id="userService" class="com.shantom.service.UserServiceImpl"/>
 
+<!--    API实现-->
 <!--    <aop:config>-->
 <!--        &lt;!&ndash;切入点&ndash;&gt;-->
 <!--        <aop:pointcut id="pointcut" expression="execution(* com.shantom.service.UserServiceImpl.*(..))"/>-->
@@ -15,13 +16,17 @@
 <!--        <aop:advisor advice-ref="afterLog" pointcut-ref="pointcut"/>-->
 <!--    </aop:config>-->
 
-    <bean id="diy" class="com.shantom.log.DIYLog"/>
-    <aop:config>
-        <aop:aspect ref="diy">
-            <aop:pointcut id="pc" expression="execution(* com.shantom.service.UserServiceImpl.*(..))"/>
-            <aop:before method="before" pointcut-ref="pc"/>
-            <aop:after method="after" pointcut-ref="pc"/>
-        </aop:aspect>
-    </aop:config>
+<!--    切面实现-->
+<!--    <bean id="diy" class="com.shantom.log.DIYLog"/>-->
+<!--    <aop:config>-->
+<!--        <aop:aspect ref="diy">-->
+<!--            <aop:pointcut id="pc" expression="execution(* com.shantom.service.UserServiceImpl.*(..))"/>-->
+<!--            <aop:before method="before" pointcut-ref="pc"/>-->
+<!--            <aop:after method="after" pointcut-ref="pc"/>-->
+<!--        </aop:aspect>-->
+<!--    </aop:config>-->
 
+<!--    注解实现-->
+    <bean id="anno" class="com.shantom.log.AnnoPointCut"/>
+    <aop:aspectj-autoproxy/>
 </beans>
