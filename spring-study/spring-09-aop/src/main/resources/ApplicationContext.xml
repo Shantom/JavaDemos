@@ -7,12 +7,21 @@
     <bean id="beforeLog" class="com.shantom.log.BeforeLog"/>
     <bean id="userService" class="com.shantom.service.UserServiceImpl"/>
 
+<!--    <aop:config>-->
+<!--        &lt;!&ndash;切入点&ndash;&gt;-->
+<!--        <aop:pointcut id="pointcut" expression="execution(* com.shantom.service.UserServiceImpl.*(..))"/>-->
+<!--        &lt;!&ndash;环绕&ndash;&gt;-->
+<!--        <aop:advisor advice-ref="beforeLog" pointcut-ref="pointcut"/>-->
+<!--        <aop:advisor advice-ref="afterLog" pointcut-ref="pointcut"/>-->
+<!--    </aop:config>-->
+
+    <bean id="diy" class="com.shantom.log.DIYLog"/>
     <aop:config>
-        <!--切入点-->
-        <aop:pointcut id="pointcut" expression="execution(* com.shantom.service.UserServiceImpl.*(..))"/>
-        <!--环绕-->
-        <aop:advisor advice-ref="beforeLog" pointcut-ref="pointcut"/>
-        <aop:advisor advice-ref="afterLog" pointcut-ref="pointcut"/>
+        <aop:aspect ref="diy">
+            <aop:pointcut id="pc" expression="execution(* com.shantom.service.UserServiceImpl.*(..))"/>
+            <aop:before method="before" pointcut-ref="pc"/>
+            <aop:after method="after" pointcut-ref="pc"/>
+        </aop:aspect>
     </aop:config>
 
 </beans>
