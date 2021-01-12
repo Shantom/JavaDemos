@@ -1,4 +1,4 @@
-package com.shantom.callable;
+package com.shantom.future;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
