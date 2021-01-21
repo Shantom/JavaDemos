@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.shantom.dao.TeacherMapper">
+    <select id="getTeacherList" resultMap="Teacher1">
+        select s.id sid, s.name sname, t.id tid, t.name tname
+        from mybatis.teacher t, mybatis.student s
+        where s.tid=t.id
+    </select>
+    <resultMap id="Teacher1" type="com.shantom.pojo.Teacher">
+        <result column="tid" property="id"/>
+        <result column="tname" property="name"/>
+        <collection property="students" ofType="com.shantom.pojo.Student">
+            <result property="id" column="sid"/>
+            <result property="name" column="sname"/>
+        </collection>
+    </resultMap>
+
+
+    <select id="getTeacherList2" resultMap="Teacher2">
+        select id, name from mybatis.teacher
+    </select>
+    <resultMap id="Teacher2" type="com.shantom.pojo.Teacher">
+        <collection property="students" javaType="ArrayList" column="id" ofType="com.shantom.pojo.Student" select="getStudent"/>
+    </resultMap>
+    <select id="getStudent" resultType="com.shantom.pojo.Student">
+        select id, name from mybatis.student where tid=#{id}
+    </select>
+</mapper>
