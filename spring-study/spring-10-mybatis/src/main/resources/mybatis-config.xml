@@ -4,10 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <typeAliases>
-        <package name="com.shantom.dao"/>
+        <package name="com.shantom.pojo"/>
     </typeAliases>
 
-    <mappers>
-        <mapper resource="com/shantom/dao/BooksMapper.xml"/>
-    </mappers>
 </configuration>
