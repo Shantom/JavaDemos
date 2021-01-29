@@ -6,6 +6,16 @@ public class Books {
     private int bookCounts;
     private String detail;
 
+    @Override
+    public String toString() {
+        return "Books{" +
+                "bookID=" + bookID +
+                ", bookName='" + bookName + '\'' +
+                ", bookCounts=" + bookCounts +
+                ", detail='" + detail + '\'' +
+                '}';
+    }
+
     public Books(int bookID, String bookName, int bookCounts, String detail) {
         this.bookID = bookID;
         this.bookName = bookName;
