@@ -2,7 +2,7 @@ package com.shantom.solutions.bisearch;
 
 public class Solution793 {
     public static void main(String[] args) {
-        int K = 1000000000;
+        int K = 5;
         int res = new Solution793().preimageSizeFZF(K);
         System.out.println(res);
     }
@@ -33,11 +33,11 @@ public class Solution793 {
         return (int) (high-low);
     }
 
-    private int f(long x){
-        int res = 0;
+    private long f(long x){
+        long res = 0;
         long five = x;
         while(five>0){
-            res+=x/five;
+            res+=five/5;
             five/=5;
         }
         return res;
