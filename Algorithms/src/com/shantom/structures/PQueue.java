@@ -2,6 +2,9 @@ package com.shantom.structures;
 
 import java.util.Arrays;
 
+/**
+ * 小顶堆
+ */
 public class PQueue {
     private int[] nums = new int[]{6,3,7,9,5,4,12,8,9,5,3};
 
@@ -10,14 +13,20 @@ public class PQueue {
     public static void main(String[] args) {
         PQueue pQueue = new PQueue();
         pQueue.heapify();
-        pQueue.print();
+        pQueue.printArray();
         for (int i = 0; i < 4; i++) {
             pQueue.poll();
         }
         pQueue.add(10);
         pQueue.add(7);
-        pQueue.print();
+        pQueue.printArray();
 
+    }
+
+    public void printArray(){
+        for (int num : nums) {
+            System.out.print(num+" ");
+        }
     }
 
     public void print(){

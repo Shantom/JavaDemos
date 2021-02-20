@@ -1,7 +1,7 @@
 package com.shantom.solutions.bfs;
 
-import com.shantom.solutions.TreeNode;
-import com.shantom.solutions.TreeUtils;
+import com.shantom.structures.tree.TreeNode;
+import com.shantom.structures.tree.TreeUtils;
 
 import java.util.*;
 

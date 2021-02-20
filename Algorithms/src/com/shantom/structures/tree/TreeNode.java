@@ -1,4 +1,4 @@
-package com.shantom.solutions;
+package com.shantom.structures.tree;
 
 public class TreeNode {
     public int val;

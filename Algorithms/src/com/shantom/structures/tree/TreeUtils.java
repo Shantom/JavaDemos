@@ -1,4 +1,4 @@
-package com.shantom.solutions;
+package com.shantom.structures.tree;
 
 import java.util.LinkedList;
 import java.util.Queue;
