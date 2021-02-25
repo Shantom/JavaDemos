@@ -3,6 +3,8 @@ package com.shantom.solutions.tree;
 import com.shantom.structures.tree.TreeNode;
 import com.shantom.structures.tree.TreeUtils;
 
+import java.util.Arrays;
+
 public class Solution114 {
     public static void main(String[] args) throws TreeUtils.WrongTreeStructure {
         TreeNode root = TreeUtils.constructTree(new Integer[]{1, 2, 5, 3, 4, null, 6});
